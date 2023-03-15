@@ -18,8 +18,8 @@
     "scripts": {
         "prettier": "prettier --write '**/src/**/*.ts?(x)'"
     },
-    "devDependencies": {},
     "dependencies": {
         "prettier": "^2.8.4"
-    }
+    },
+    "devDependencies": {}
 }
