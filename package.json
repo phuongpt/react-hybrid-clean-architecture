@@ -1,0 +1,25 @@
+{
+    "description": "(React + React Native) Clean Architecture Using Redux",
+    "name": "react-hybrid-clean-architecture",
+    "version": "1.0.0",
+    "author": "phuongpt",
+    "license": "MIT",
+    "homepage": "https://github.com/phuongpt/react-hybrid-clean-architecture#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/phuongpt/react-hybrid-clean-architecture.git"
+    },
+    "keywords": [
+        "react",
+        "react-native",
+        "clean-architecture",
+        "boilerplate"
+    ],
+    "scripts": {
+        "prettier": "prettier --write '**/src/**/*.ts?(x)'"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "prettier": "^2.8.4"
+    }
+}
