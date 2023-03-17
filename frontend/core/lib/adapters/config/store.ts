@@ -2,6 +2,7 @@ import { rootReducer } from "./reducers";
 import { Action, AnyAction, configureStore } from '@reduxjs/toolkit'
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk";
 import logger from 'redux-logger'
+import { persistStore } from "reduxjs-toolkit-persist";
 
 const _dev = process.env.NODE_ENV !== 'production';
 
@@ -21,4 +22,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     unknown,
     Action<string>
 >;
-
+export const persistor = persistStore(store);
