@@ -1,17 +1,23 @@
-import { Auth, User, UserAuth, } from "../enitites";
+import { Auth, parseUser, User, UserAuth, } from "../enitites";
 import { UserRepository } from "../repositories";
 
 export class UserService implements UserRepository {
     async signIn(auth: Auth): Promise<User> {
-        return Promise.resolve(
-            new User("Sample Service", "User", "sampleservice@email.com"),
-        );
-        // return Promise.resolve(UserSchema.parseAsync(auth));
+
+        return Promise.resolve(parseUser({
+            ...auth,
+            name: "Unknown"
+        }));
     }
 
     async signUp(auth: UserAuth): Promise<User> {
-        return Promise.resolve(auth);
-        // return Promise.resolve(UserSchema.parseAsync(auth));
+        return Promise.resolve(parseUser({
+            ...auth,
+        }));
+
+    }
+    async signOut(): Promise<void> {
+        return Promise.resolve();
     }
 
 }

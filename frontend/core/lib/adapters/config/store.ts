@@ -1,11 +1,14 @@
 import { rootReducer } from "./reducers";
 import { Action, AnyAction, configureStore } from '@reduxjs/toolkit'
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk";
+import logger from 'redux-logger'
+
+const _dev = process.env.NODE_ENV !== 'production';
 
 export const store = configureStore({
     reducer: rootReducer,
-    devTools: process.env.NODE_ENV !== 'production',
-    middleware: [thunk],
+    devTools: _dev,
+    middleware: _dev ? [thunk, logger] : [thunk],
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
@@ -18,3 +21,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     unknown,
     Action<string>
 >;
+

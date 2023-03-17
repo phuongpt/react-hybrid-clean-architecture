@@ -1,9 +1,9 @@
-import { Auth } from '../../../enitites';
-import { signInAction } from './reducer';
+import { Auth, UserAuth } from '../../../enitites';
+import { signInDispatch, signOutDispatch, signUpDispatch } from './reducer';
 import { AppDispatch, AppThunk } from '../../config/store';
 import { UserService } from '../../../services';
 
-export const signIn = (
+export const signInAction = (
     auth: Auth
 ): AppThunk => async (
     dispatch: AppDispatch,
@@ -11,8 +11,32 @@ export const signIn = (
         try {
             const service = new UserService();
             const user = await service.signIn(auth);
-            dispatch(signInAction(user));
+            dispatch(signInDispatch(user));
         } catch (error) {
             console.error(error);
         }
     };
+export const signUpAction = (
+    auth: UserAuth
+): AppThunk => async (
+    dispatch: AppDispatch,
+) => {
+        try {
+            const service = new UserService();
+            const user = await service.signUp(auth);
+            dispatch(signUpDispatch(user));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+export const signOutAction = (): AppThunk => async (
+    dispatch: AppDispatch,
+) => {
+    try {
+        const service = new UserService();
+        await service.signOut();
+        dispatch(signOutDispatch());
+    } catch (error) {
+        console.error(error);
+    }
+};
