@@ -1,9 +1,11 @@
+import { userSelector } from 'core';
 import React, { Suspense } from 'react'
 import {
     BrowserRouter as Router,
     Routes,
     Route,
 } from 'react-router-dom';
+import { useAppSelector } from '../hook';
 import ProtectedRoute from './protected-route';
 
 // Pages
@@ -12,20 +14,26 @@ const RegisterScreen = React.lazy(() => import("../screens/auth/register_screen"
 const HomeScreen = React.lazy(() => import("../screens/home/home_screen"));
 
 function Routers() {
+    const auth = !!useAppSelector(s => userSelector(s.user)).data;
+
+
     return (
         <Router>
 
             <Suspense fallback={<div></div>}>
-                <Routes>
-                    <Route path="/login" element={<LoginScreen />} />
-                    <Route path="/register" element={<RegisterScreen />} />
-
-                    <Route path='/' element={
-                        <ProtectedRoute>
+                {!auth ?
+                    <Routes>
+                        <Route path="*" element={<LoginScreen />} />
+                        <Route path="/register" element={<RegisterScreen />} />
+                    </Routes>
+                    :
+                    <Routes>
+                        <Route path="*" element={<HomeScreen />} />
+                        <Route path='/' element={
                             <HomeScreen />
-                        </ProtectedRoute>
-                    } />
-                </Routes>
+                        } />
+                    </Routes>}
+
 
 
             </Suspense>

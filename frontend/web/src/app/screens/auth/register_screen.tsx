@@ -9,7 +9,6 @@ import logo from '../../../assets/logo.svg';
 
 const RegisterScreen = () => {
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     return (
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gradient-to-r from-gray-800 to-blue-500 h-screen">
@@ -38,7 +37,6 @@ const RegisterScreen = () => {
                                 setSubmitting(true);
                                 await dispatch(signUpAction(values));
                                 setSubmitting(false);
-                                navigate("/", { replace: true });
                             } catch (error) {
                                 setSubmitting(false);
                             }

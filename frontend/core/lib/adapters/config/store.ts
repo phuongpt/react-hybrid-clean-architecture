@@ -18,6 +18,9 @@ export const setupStore = (persistConfig: any): { persistor: Persistor, store: a
         persistor: persistStore(store)
     }
 };
+export function getStoreWithState(preloadedState?: RootState) {
+    return configureStore({ reducer: rootReducer, preloadedState });
+}
 
 export type AppState = ReturnType<typeof rootReducer>;
 export type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Auth, signInAction, validateAuth } from "core";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
@@ -10,7 +11,6 @@ import logo from '../../../assets/logo.svg';
 const LoginScreen = () => {
 
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     return (
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gradient-to-r from-gray-800 to-blue-500 h-screen">
@@ -23,8 +23,8 @@ const LoginScreen = () => {
                         Sign in to your account
                     </h1>
                     <Formik
-                        initialValues={{ email: "", password: "" } as Auth}
-                        validate={(values: Auth) => {
+                        initialValues={{ email: "", password: "" }}
+                        validate={(values) => {
                             const errors = {};
 
                             const result = validateAuth(values);
@@ -34,12 +34,11 @@ const LoginScreen = () => {
 
                             return errors;
                         }}
-                        onSubmit={async (values: Auth, { setSubmitting }) => {
+                        onSubmit={async (values, { setSubmitting }) => {
                             try {
                                 setSubmitting(true);
                                 await dispatch(signInAction(values));
                                 setSubmitting(false);
-                                navigate("/", { replace: true });
                             } catch (error) {
                                 setSubmitting(false);
                             }
@@ -64,6 +63,7 @@ const LoginScreen = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
+                                        data-testid="login-screen-field-email"
                                     />
                                 </div>
                                 <div>
@@ -75,8 +75,9 @@ const LoginScreen = () => {
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.password}
-                                    />
+                                        data-testid="login-screen-field-password"
 
+                                    />
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-start">
@@ -91,10 +92,8 @@ const LoginScreen = () => {
                                 </div>
                                 <FormErrors erros={errors} />
 
-                                <button type="submit" disabled={isSubmitting} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
-                                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                    Don’t have an account yet? <Link to={"/register"} className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
-                                </p>
+                                <button type="submit" disabled={isSubmitting} data-testid="login-screen-button-submit"
+                                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
 
                             </form>
                         )}
