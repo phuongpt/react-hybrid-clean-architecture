@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "preinstall": "cd ../core && yarn",
+    "preinstall": "cd ../core && yarn install && yarn link && cd .. && cd web && yarn link core",
     "prestart": "yarn synccore",
-    "synccore": "cd ../core && yarn build && cd ../web && yarn link core",
+    "synccore": "cd ../core && yarn build && cd ../web",
     "start": "react-scripts start",
     "test": "react-scripts test --watchAll=false"
   },
   "dependencies": {
-    "core": "file:../core",
+    "core": "../core",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
