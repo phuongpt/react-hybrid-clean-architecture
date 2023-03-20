@@ -16,7 +16,9 @@
         "boilerplate"
     ],
     "scripts": {
-        "prettier": "prettier --write '**/src/**/*.ts?(x)'"
+        "prettier": "prettier --write '**/src/**/*.ts?(x)'",
+        "test-core": "cd frontend/core && yarn install && yarn test && cd ../..",
+        "test-web": "cd frontend/web && yarn install && yarn test && cd ../.."
     },
     "dependencies": {
         "prettier": "^2.8.4"

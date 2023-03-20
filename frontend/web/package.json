@@ -7,7 +7,7 @@
     "prestart": "yarn synccore",
     "synccore": "cd ../core && yarn build && cd ../web && yarn link core",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --watchAll=false"
   },
   "dependencies": {
     "core": "file:../core",
