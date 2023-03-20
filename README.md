@@ -5,6 +5,10 @@
 # React Clean Architecture
 One of the advantages that particularly stands out to me is the ability to isolate business rules from framework-specific details. This means that your core logic is not tied to any specific technology, such as React, React Native. As a result, you have greater flexibility to move certain parts of your application to a backend, switch out libraries with minimal hassle, and reuse tests as many times as you need. Additionally, you can even share code between React and React Native applications.
 
+## Screenshot
+Web app                    |  Native app
+:-------------------------:|:-------------------------:
+![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/web.gif)  |  ![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/native.gif)
 
 ## Folder Structure
 ```
@@ -13,10 +17,10 @@ One of the advantages that particularly stands out to me is the ability to isola
 │   └── package.json
 │   └── lib
 │       ├── adapters
-│       │   └── redux
 │       ├── entities
-│       ├── frameworks
-│       └── useCases
+│       ├── services
+│       ├── useCases
+│       └── features
 ├── native
 │   └── package.json
 │   └── src
@@ -56,11 +60,6 @@ One of the advantages that particularly stands out to me is the ability to isola
 | Navigation    | &#9744;        | &#9744;       |
 | Component     | &#9744;        | &#9744;       |
 | Style         | &#9744;        | &#9744;       |
-
-## Screenshot
-Web app                    |  Native app
-:-------------------------:|:-------------------------:
-![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/web.gif)  |  ![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/native.gif)
 
 
 ## Running the apps
