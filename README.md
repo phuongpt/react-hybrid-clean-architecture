@@ -42,7 +42,7 @@ One of the advantages that particularly stands out to me is the ability to isola
 
 ```
 
-### Sharing codes
+## Sharing codes
 |               | Web App        | Native App    |
 |  :---:        |     :---:      |    :---:      |
 | Entities      | &#9745;        | &#9745;       |
@@ -57,11 +57,12 @@ One of the advantages that particularly stands out to me is the ability to isola
 | Component     | &#9744;        | &#9744;       |
 | Style         | &#9744;        | &#9744;       |
 
-#### Screenshot
+## Screenshot
+Web app                    |  Native app
+:-------------------------:|:-------------------------:
+![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/web.gif)  |  ![](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/native.gif)
 
-![Web](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/web.gif)  
-![Native](https://github.com/phuongpt/react-hybrid-clean-architecture/blob/develop/docs/images/native.gif)  
 
-##### Running the apps
+## Running the apps
 run `yarn install` under the project you'd like to run, and then run `yarn start`
  
