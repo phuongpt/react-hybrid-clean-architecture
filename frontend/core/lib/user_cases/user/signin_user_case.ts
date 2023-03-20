@@ -1,5 +1,5 @@
 import { Auth, User } from "../../enitites";
-import { UserRepository } from "../../repositories";
+import { UserRepository } from "../repositories";
 
 
 export class SignInUserCase {

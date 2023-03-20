@@ -1,5 +1,5 @@
 import { User, UserAuth } from "../../enitites";
-import { UserRepository } from "../../repositories";
+import { UserRepository } from "../repositories";
 
 
 export class SignUpUserCase {

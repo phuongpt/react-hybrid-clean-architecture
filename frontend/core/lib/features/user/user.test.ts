@@ -1,6 +1,6 @@
 //https://egghead.io/lessons/jest-unit-testing-redux-thunks-using-redux-mock-store
-import { Auth, User, UserAuth } from "../../../enitites";
-import { getStoreWithState, RootState } from "../../config";
+import { getStoreWithState } from "../../adapters";
+import { Auth, User, UserAuth } from "../../enitites";
 import { signInAction, signUpAction } from "./action";
 
 describe("Test user features", () => {
@@ -24,7 +24,7 @@ describe("Test user features", () => {
         }
         const store = getStoreWithState(state);
 
-        await store.dispatch(signUpAction({ ...data, password: "12345678" }));
+        await store.dispatch(signUpAction({ ...data, password: "12345678" } as UserAuth));
         expect(store.getState().user.data).toEqual(state.user.data);
     });
 

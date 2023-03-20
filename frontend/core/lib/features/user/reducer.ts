@@ -1,5 +1,5 @@
 import { Action } from "redux";
-import { User } from "../../../enitites";
+import { User } from "../../enitites";
 import { userInitialState, UserState } from "./state";
 
 //constraints

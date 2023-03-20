@@ -1,4 +1,4 @@
-import { Auth, UserAuth, User } from "../enitites";
+import { Auth, UserAuth, User } from "../../enitites";
 
 export interface UserRepository {
     signUp: (userAuth: UserAuth) => Promise<User>;

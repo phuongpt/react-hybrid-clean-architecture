@@ -1,4 +1,4 @@
-import { User } from "../../../enitites";
+import { User } from "../../enitites";
 
 export interface UserState {
     readonly data: User | null;

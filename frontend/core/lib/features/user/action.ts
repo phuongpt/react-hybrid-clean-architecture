@@ -1,7 +1,7 @@
-import { Auth, UserAuth } from '../../../enitites';
+import { Auth, UserAuth } from '../../enitites';
 import { signInDispatch, signOutDispatch, signUpDispatch } from './reducer';
-import { AppDispatch, AppThunk } from '../../config/store';
-import { UserService } from '../../../services';
+import { UserService } from '../../services';
+import { AppDispatch, AppThunk } from '../../adapters';
 
 export const signInAction = (
     auth: Auth

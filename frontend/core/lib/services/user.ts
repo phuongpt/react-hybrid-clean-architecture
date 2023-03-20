@@ -1,5 +1,5 @@
 import { Auth, parseUser, User, UserAuth, } from "../enitites";
-import { UserRepository } from "../repositories";
+import { UserRepository } from "../user_cases/repositories";
 
 export class UserService implements UserRepository {
     async signIn(auth: Auth): Promise<User> {
