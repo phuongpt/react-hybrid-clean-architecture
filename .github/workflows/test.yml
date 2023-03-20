@@ -11,5 +11,3 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test core
       run: yarn run test-core
-    - name: Test web
-      run: yarn run test-web

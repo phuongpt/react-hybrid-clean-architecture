@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "preinstall": "cd ../core && yarn install && yarn link && cd .. && cd web && yarn add core && yarn link core",
+    "preinstall": "cd ../core && yarn install && yarn link && cd .. && cd web && yarn link core",
     "prestart": "yarn synccore",
     "synccore": "cd ../core && yarn build && cd ../web",
     "start": "react-scripts start",
