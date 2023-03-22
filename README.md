@@ -56,7 +56,6 @@ Web app                    |  Native app
 | Service       | &#9745;        | &#9745;       |
 | State         | &#9745;        | &#9745;       |
 | Actions       | &#9745;        | &#9745;       |
-| React-Hook    | &#9744;        | &#9744;       |
 | Navigation    | &#9744;        | &#9744;       |
 | Component     | &#9744;        | &#9744;       |
 | Style         | &#9744;        | &#9744;       |
